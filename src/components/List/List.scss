@@ -1,0 +1,45 @@
+.list {
+    margin-bottom: 30px;
+    li {
+      display: flex;
+      align-items: center;
+      padding: 10px 12px;
+      cursor: pointer;
+      &.active {
+        background: #FFFFFF;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+        border-radius: 4px;
+      }
+      i {
+        margin-right: 10px;
+        img {
+          opacity: 0.6;
+        }
+      }
+      span{
+        position: relative;
+        left: 5px;
+      }
+    }
+    .badge {
+        width: 10px;
+        height: 10px;
+        border-radius: 30px;
+        margin-left: 5px;
+        &__green{
+            background: #42B883;
+        }
+        &__blue{
+            background: #64C4ED;
+        }
+        &__pink{
+            background: #FFBBCC;
+        }
+        &__pink{
+            background: #FFBBCC;
+        }
+        &__pink{
+            background: #FFBBCC;
+        }
+    }
+}
