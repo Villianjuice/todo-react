@@ -1,0 +1,70 @@
+.tasks{
+    padding: 60px;
+    &__item{
+        display: flex;
+        align-items: center;
+        margin-top: 30px;
+    }
+    &__text{
+        margin-left: 10px;
+        font-size: 15px;
+        color: #000000;
+    }
+    h1{
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 39px;
+        color: #64C4ED;
+
+        padding-bottom: 20px;
+        border-bottom: 1px solid #F2F2F2;
+        
+        &:hover{
+            img{
+                opacity: 0.3;
+            }
+        }
+        img{
+            opacity: 0;
+            margin-left: 8px;
+            &:hover{
+                opacity: 0.7;
+            }
+            cursor: pointer;
+        }
+    }
+    input{
+        display: none;
+    }
+    input:checked + label {
+        background: #4DD599;
+        border-color: #4DD599;
+        svg{
+            opacity: 1;
+            path{
+                stroke: #fff;
+            }
+        }
+    }
+    label{
+        width: 20px;
+        height: 20px;
+        border-radius: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border: 2px solid #E8E8E8;
+        svg{
+            opacity: 0;
+        }
+        &:hover{
+            background: #F2F2F2;
+            svg{
+                opacity: 0.8;
+            }
+        }
+    }
+}

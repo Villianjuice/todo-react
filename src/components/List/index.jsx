@@ -3,7 +3,16 @@ import classNames from 'classnames'
 import './List.scss'
 import Badge from '../Badge'
 
-const List = ({items, isRemovable, onClick}) => {
+import btnClose from '../../assets/img/Vector.svg'
+
+
+const List = ({items, isRemovable, onClick, removeList}) => {
+
+  const removeConfirm = (item) => {
+    if (window.confirm('Вы уверены, что хотите удалить список?')) {
+      removeList(item)
+    }
+  }
   return (
     <ul onClick={onClick} className="list">
       {items.map((item, index) => 
@@ -12,6 +21,8 @@ const List = ({items, isRemovable, onClick}) => {
             {item.icon ? item.icon : <Badge color={item.color}/>}
           </i>
           <span>{item.name}</span>
+          {isRemovable && <img onClick={() => removeConfirm(item)} src={btnClose} alt='btn close' className='list__close-icon'/>}
+          
         </li>
       )}
         

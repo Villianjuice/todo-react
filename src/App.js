@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import AddList from "./components/AddList";
 import List from "./components/List";
 
 import DB from './assets/db.json'
+import Tasks from "./components/Tasks";
 
 
 function App() {
+  const [list, setList] = useState(DB.lists.map(list => {
+    list.color = DB.colors.find(color =>color.id === list.colorId).name
+    return list
+  }))
+
+  const onAdd = (obj) => {
+    const newList = [...list, obj]
+    setList(newList)
+  }
+
+  
   return (
     <div className="todo">
       <aside className="todo__sidebar">
@@ -19,25 +31,14 @@ function App() {
           }
         ]}/>
         <List 
-          items={[
-            {
-              color: 'green',
-              name: 'Покупки'
-            },
-            {
-              color: 'blue',
-              name: 'Фронтенд'
-            },
-            {
-              color: 'pink',
-              name: 'Фильмы и сериалы'
-            },
-          ]}
+          items={list}
           isRemovable
+          removeList={item => console.log(item)}
         />
-        <AddList colors={DB.colors}/>
+        <AddList onAdd={onAdd} colors={DB.colors}/>
       </aside>
-      <main className="todo__taks">
+      <main className="todo__tasks">
+        <Tasks/>
       </main>
     </div>
   );
