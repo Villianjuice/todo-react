@@ -13,6 +13,7 @@ body {
 
 .todo {
   position: absolute;
+  display: flex;
   left: 50%;
   top: 50%;
   width: 750px;
@@ -29,7 +30,9 @@ body {
     border-right: 1px solid #F1F1F1;
     padding: 60px 20px;
   }
-  
+  &__tasks{
+    flex: 1;
+  }
 }
 .field{
   background: #FFFFFF;
