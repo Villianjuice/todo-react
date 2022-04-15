@@ -1,11 +1,14 @@
 .tasks{
     padding: 60px;
-    &__item{
+    &__items{
+        display: flex;
+        margin-top: 20px;
+    }
+    &__row{
         display: flex;
         align-items: center;
-        margin-top: 30px;
     }
-    &__text{
+    p{
         margin-left: 10px;
         font-size: 15px;
         color: #000000;
