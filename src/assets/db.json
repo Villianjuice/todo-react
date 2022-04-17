@@ -2,12 +2,12 @@
   "lists": [
     {
       "id": 1,
-      "name": "Покупки",
+      "name": "Покупки12",
       "colorId": 5
     },
     {
       "id": 2,
-      "name": "Borato",
+      "name": "Учеба",
       "colorId": 4
     },
     {
@@ -24,28 +24,38 @@
       "id": 5,
       "name": "Личное",
       "colorId": 1
+    },
+    {
+      "listId": 2,
+      "text": "2dq2d",
+      "completed": false,
+      "id": 6
     }
   ],
   "tasks": [
     {
       "id": 1,
       "listId": 2,
-      "text": "Изучить JavaScript"
+      "text": "Изучить JavaScript",
+      "completed": false
     },
     {
       "id": 2,
       "listId": 2,
-      "text": "Изучить паттерны проектирования"
+      "text": "Изучить паттерны проектирования",
+      "completed": false
     },
     {
       "id": 3,
       "listId": 2,
-      "text": "ReactJS Hooks (useState, useReducer, useEffect и т.д.)"
+      "text": "ReactJS Hooks (useState, useReducer, useEffect и т.д.)",
+      "completed": false
     },
     {
       "id": 4,
       "listId": 2,
-      "text": "Redux (redux-observable, redux-saga)"
+      "text": "Redux (redux-observable, redux-saga)",
+      "completed": false
     }
   ],
   "colors": [

@@ -1,15 +1,30 @@
 import React from 'react'
+import axios from 'axios'
 
 import './Tasks.scss'
-
 import Pencle from '../../assets/img/Pencle.svg'
+import TasksForm from './TasksForm'
 
-const Tasks = ({list}) => {
+
+const Tasks = ({list, changeTitle, addTask}) => {
+
+    const editTitle = () => {
+        const newTitle = prompt('Введите новое название', list.name )
+        if(newTitle){
+            changeTitle(list.id, newTitle)
+            axios.patch(('http://localhost:3001/lists/' + list.id), {
+                name: newTitle
+            }).catch(err => console.log(err))
+        }
+    }
+    
   return (
     <div className="tasks">
-        <h1>{list.name} <img src={Pencle} alt="Pence"/></h1>
-
+        <h1>{list.name} <img onClick={editTitle} src={Pencle} alt="Pence"/></h1>
+        
+        {!list.tasks.length && <h2>Задачи отсутствуют</h2>}
         {list.tasks.map(task => 
+            
             <div key={task.id} className="tasks__items">
                 <div className="tasks__row">
                     <div className="checkbox">
@@ -21,10 +36,11 @@ const Tasks = ({list}) => {
 
                         </label>
                     </div>
-                    <p>{task.text}</p>
+                    <input type="text" readOnly value={task.text} />
                 </div>
             </div>
         )}
+        <TasksForm addTask={addTask} list={list}/>
         
     </div>
   )

@@ -8,7 +8,7 @@ import Badge from '../Badge'
 import btnClose from '../../assets/img/Vector.svg'
 
 
-const List = ({items, isRemovable, onClick, removeList}) => {
+const List = ({items, isRemovable, onClick, removeList, onClickItem, activeItem}) => {
 
   const removeConfirm = (item) => {
     if (window.confirm('Вы уверены, что хотите удалить список?')) {
@@ -20,11 +20,14 @@ const List = ({items, isRemovable, onClick, removeList}) => {
   return (
     <ul onClick={onClick} className="list">
       {items.map((item, index) => 
-        <li key={index} className={classNames(item.className, {'active' : item.active})}>
+        <li 
+        onClick={() => onClickItem(item)} 
+        key={index} 
+        className={classNames(item.className, {active: activeItem && activeItem.id === item.id})}>
           <i>
             {item.icon ? item.icon : <Badge color={item.color.name}/>}
           </i>
-          <span>{item.name}</span>
+          <span>{item.name} {item.tasks && ` (${item.tasks.length})`}</span>
           {isRemovable && <img onClick={() => removeConfirm(item)} src={btnClose} alt='btn close' className='list__close-icon'/>}
           
         </li>
