@@ -5,14 +5,14 @@
       "name": "Покупки",
       "colorId": 5,
       "color": {
-      "id": 5,
-      "hex": "#B6E6BD",
-      "name": "lime"
+        "id": 5,
+        "hex": "#B6E6BD",
+        "name": "lime"
       }
-      },
+    },
     {
       "id": 2,
-      "name": "Фронтенд12",
+      "name": "Фронтенд",
       "colorId": 4
     },
     {
@@ -35,22 +35,62 @@
     {
       "id": 1,
       "listId": 2,
-      "text": "Изучить JavaScript"
+      "text": "Изучить JavaScript",
+      "completed": false
     },
     {
       "id": 2,
       "listId": 2,
-      "text": "Изучить паттерны проектирования"
+      "text": "Изучить паттерны проектирования",
+      "completed": false
     },
     {
       "id": 3,
       "listId": 2,
-      "text": "ReactJS Hooks (useState, useReducer, useEffect и т.д.)"
+      "text": "ReactJS Hooks (useState, useReducer, useEffect и т.д.)",
+      "completed": false
     },
     {
       "id": 4,
       "listId": 2,
-      "text": "Redux (redux-observable, redux-saga)"
+      "text": "Redux (redux-observable, redux-saga)",
+      "completed": false
+    },
+    {
+      "listId": 2,
+      "text": "1212",
+      "completed": false,
+      "id": 5
+    },
+    {
+      "listId": 2,
+      "text": "qwqwd",
+      "completed": false,
+      "id": 6
+    },
+    {
+      "listId": 5,
+      "text": "test",
+      "completed": false,
+      "id": 7
+    },
+    {
+      "listId": 5,
+      "text": "12",
+      "completed": false,
+      "id": 8
+    },
+    {
+      "listId": 1,
+      "text": "test",
+      "completed": false,
+      "id": 9
+    },
+    {
+      "listId": 1,
+      "text": "123",
+      "completed": false,
+      "id": 10
     }
   ],
   "colors": [

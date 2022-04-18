@@ -2,13 +2,24 @@ import React from 'react'
 import './Tasks.scss'
 
 import Pencle from '../../assets/img/Penclesvg.svg'
+import axios from 'axios'
+import TasksForm from './TasksForm'
 
 
+const Tasks = ({list, editTitle, onAddTask}) => {
 
-const Tasks = ({list}) => {
+    const editListTitle = () => {
+        const newTitle = prompt('Введите новое название', list.name)
+        if(newTitle) {
+            editTitle(list.id, newTitle)
+            axios.patch('http://localhost:3001/lists/' + list.id, {
+                name: newTitle
+            } )
+        }
+    }
   return (
     <div className='tasks'>
-        <h2 className="tasks__title">{list.name} <img src={Pencle} alt="" /> </h2>
+        <h2 className="tasks__title" onClick={editListTitle}>{list.name} <img src={Pencle} alt="" /> </h2>
         <div className="tasks__items">
            {list.tasks.map(task => 
             <div key={task.id} className="tasks__row">
@@ -27,10 +38,12 @@ const Tasks = ({list}) => {
 
                     </label>
                 </div>
-                <p> {task.text}</p>
+                <input type="text" readOnly value={task.text}/>
             </div>
            )}
         </div>
+        
+        <TasksForm list={list} onAddTask={onAddTask}/>
     </div>
   )
 }

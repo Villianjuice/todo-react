@@ -22,7 +22,7 @@
       }
     }
     &__items {
-      margin-top: 30px;
+      margin-top: 15px;
       &-row {
         display: flex;
         align-items: center;
@@ -81,6 +81,41 @@
           border-color 0.15s ease-in-out;
         svg {
           opacity: 0;
+        }
+      }
+    }
+    &__row{
+      display: flex;
+      margin-bottom: 12px;
+      input{
+        width: 100%;
+        border: none;
+        margin-left: 10px;
+      }
+    }
+    &__form{
+      margin-top: 10px;
+      &-add{
+        display: flex;
+        align-items: center;
+        color: #7e7d7d;
+        opacity: 0.5;
+        cursor: pointer;
+        img{
+          width: 16px;
+          margin-left: 5px;
+        }
+        span{
+          margin-left: 13px;
+        }
+        &:hover{
+          opacity: 0.8;
+        }
+      }
+      &-block{
+        button{
+          margin-top: 15px;
+          margin-right: 8px;
         }
       }
     }

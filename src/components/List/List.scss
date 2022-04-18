@@ -44,6 +44,10 @@
         position: relative;
         flex: 1;
         left: 5px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 100px;
+        white-space: nowrap;
       }
     }
     
